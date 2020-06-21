@@ -19,5 +19,10 @@ namespace Contracts.Models
         public double Rigidity { get; set; }
         public string CuttingInstrument { get; set; }
         public string InstrumentMaterial { get; set; }
+
+        new public string ToString()
+        {
+            return $"Workbench name: {Workbench.Name}\nMaterial: {Material}\nDiametr: {Diametr}\nDepth: {Depth}\nCuttingInstrument: {CuttingInstrument}\nInstrumentMaterial: {InstrumentMaterial}";
+        }
     }
 }

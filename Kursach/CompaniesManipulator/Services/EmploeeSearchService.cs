@@ -34,8 +34,12 @@ namespace Application.Services
 
         public void CreateEmploee(Emploee entity)
         {
-            if (!Regex.IsMatch(entity.PhoneNumber, @"\d{11}"))
-                throw new ArgumentException("invlid phone number");
+            if (!Regex.IsMatch(entity.PhoneNumber, @"^380\d{8}$") || 
+                string.IsNullOrEmpty(entity.PhoneNumber) ||
+                string.IsNullOrEmpty(entity.Surname) ||
+                string.IsNullOrEmpty(entity.Company) ||
+                string.IsNullOrEmpty(entity.Initials))
+                throw new ArgumentException("invlid parametr");
 
             entity.Id = _repository.GetAllQueryable().Select(x => x.Id).Max() + 1;
             _repository.Add(entity);

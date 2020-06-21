@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace Contracts.Models
 {
@@ -8,7 +6,8 @@ namespace Contracts.Models
     {
         public string Material { get; set; }
         public string InstrumentMaterial { get; set; }
-        public double Diametr { get; set; }
+        public double DiametrStart { get; set; }
+        public double DiametrEnd { get; set; }
         public double StabilityValue { get; set; }
     }
 }
